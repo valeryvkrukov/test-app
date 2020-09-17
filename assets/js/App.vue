@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav-bar />
+    <nav-bar @search-link="showLinkInfo" />
     <router-view />
   </div>
 </template>
@@ -12,6 +12,16 @@ export default {
   name: 'App',
   components: {
     NavBar
+  },
+  methods: {
+    showLinkInfo(term) {
+      const path = `/view/${term.searchKey}`;
+      if (this.$route.name !== 'view') {
+        this.$router.push(path);
+      } else {
+        this.$router.replace(path);
+      }
+    }
   }
 }
 </script>

@@ -11,3 +11,12 @@ export function createLink(sourceUrl) {
         return axios.get(resp.data['@id']);
     });
 }
+
+export function getLinkInfo(key) {
+    return axios.get('/api/links', {
+        params: {
+            shortKey: key,
+            page: 1
+        }
+    });
+}

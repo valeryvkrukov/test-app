@@ -43,7 +43,6 @@ export default {
     }
   },
   beforeMount() {
-    console.log(this.$router)
     fetchLinks().then((links) => {
       this.links = links.data['hydra:member'];
     })
