@@ -11,6 +11,8 @@ Requirements:
 Installation proecss:
 ---------------------
 
+```cd <project-directory>```
+
 ```composer install```
 
 ```yarn install```
@@ -18,6 +20,8 @@ Installation proecss:
 ```yarn dev```
 
 ### Configure DATABASE_URL in .env then run:
+
+```php bin/console doctrine:database:create```
 
 ```php bin/console doctrine:migrations:migrate```
 
